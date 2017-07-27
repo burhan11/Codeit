@@ -1,0 +1,5 @@
+<link href="css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.google.com/?selection.family=Arima+Madurai">
+    <link rel="stylesheet" type="text/css" href="css/jquery.classyedit.css" />
+    <style media="screen">

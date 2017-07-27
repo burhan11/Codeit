@@ -1,0 +1,46 @@
+﻿<b>Problem Statement</b><br/>
+<p>What is the maximum number of squares of size 2x2 that can be fit in a right angled isosceles triangle of base B.<br/>
+One side of the square must be parallel to the base of the isosceles triangle.<br/>
+Base is the shortest side of the triangle</p><br/>
+
+<b>Input</b><br/>
+<p>
+First line contains T, the number of test cases.<br/>
+Each of the following T lines contains 1 integer B.<br/>
+</p>
+<b>Output</b><br/>
+<p>
+Output exactly T lines, each line containing the required answer.
+</p>
+<b>Constraints</b>
+
+<p>1 <= T <= 10^3</p>
+
+<p>1 <= B <= 10^4</p>
+
+<b>Sample Input</b><br/>
+
+11<br/>
+1<br/>
+2<br/>
+3<br/>
+4<br/>
+5<br/>
+6<br/>
+7<br/>
+8<br/>
+9<br/>
+10<br/>
+11<br/>
+<b>Sample Output</b> <br/>
+0<br/>
+0<br/>
+0<br/>
+1<br/>
+1<br/>
+3<br/>
+3<br/>
+6<br/>
+6<br/>
+10<br/>
+10<br/>

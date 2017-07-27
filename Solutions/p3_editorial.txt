@@ -1,0 +1,27 @@
+PROBLEM:
+Find the maximum number of squares of size 2×22×2 that can be fitted in a right angled isosceles triangle of base BB. All sides of the square must be parallel to both base and height of the isosceles triangle.
+
+QUICK EXPLANATION:
+As B<=1000, we can pre-compute the output for all the test cases, and report the answer in O(1) time for each of the query.
+
+EXPLANATION:
+First consider the right angle triangle XYZ, where YZ is the base of triangle. Suppose length of the base is BB. If we consider the position of first square with the vertex YY, we will have (B/2-1) squares in the base, and we will be left with another isosceles right angle triangle having base length (B-2).
+
+
+Let f(B) = Number of squares which can be fitted in triangle having base length BB.
+
+
+f(B)=(B/2-1)+f(B-2)
+
+The given time limit is sufficient even if we calculate f(Bf(B) using the given recursion, and use memoization. Later we can answer each query in O(1)O(1) time. We can do it for even and odd numbers separately with the base case f(1)=f(2)=f(3)=0
+
+The given recursion can be solved in following manner.
+
+f(B)=B-2/2+F(B-2) =B-2/2+B-4/2+F(B-4) =B-2/2+B-4/2+B-6/2+F(B?6)
+With conditions, f(1)=f(2)=0
+f(B)=B/2+(B/2-1)+(B/2-2)+....+1
+f(B) = Sum of first B/2 natural numbers.
+
+Lets call M=B2M=B2
+f(B)=M×(M+1)/2 
+You can notice that answer for 2N and 2N+1 will be the same.

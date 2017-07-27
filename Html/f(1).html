@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.google.com/?selection.family=Arima+Madurai">
+    <link rel="stylesheet" type="text/css" href="css/jquery.classyedit.css" />
+    
+
+<style>
+  body
+  {
+	
+    background-size:100%;
+  }
+
+  .modal-header,.close {
+      background-color: #2471a3 ;
+      color:white;
+      text-align: center;
+      font-size: 30px;
+  }
+  #home{
+  	margin:50px;
+  }
+  #gender{
+  margin:50px;
+  }
+  #qualification{
+  margin:30px;
+  }
+  #city{
+  margin:100px;
+  }
+  #enroll{
+  margin:50px;
+  }
+  #nav > li > a{
+  	color: white;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+  </style>
+
+</head>
+<body>
+
+		<!-- Home Page-->
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			 	<span class="icon-bar"></span>
+			  </button>
+				<a href="#" class="navbar-brand"  style="background-color:#4090c3; color:white;">Code-!t</a>
+			</div>
+			<div  class="collapse navbar-collapse" id="mainNavbar">
+				<ul class="nav navbar-nav" id="nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Profile</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">Practise <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Code & Compile</a></li>
+							<li><a href="#">Easy</a></li>
+							<li><a href="#">Hard</a></li>
+						</ul>
+					</li>
+`					<li><a href="#">My Submission</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" id="nav-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">Log-in! <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" id="btnTrigger" data-toggle="modal" data-target="#popUpWin">Faculty</a></li>
+							<li><a href="#" id="btnTrigger" data-toggle="modal" data-target="#popUp">Student</a></li>
+						</ul>
+						</li>
+					<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">Sign-up! <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" id="btnTrigger" data-toggle="modal" data-target="#popUpWindow">Faculty</a></li>
+							<li><a href="#" id="btnTrigger" data-toggle="modal" data-target="#pop">Student</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Login for Student -->
+
+	 <div class="modal fade" id="popUp">
+	  	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-title">Log-in!</span>
+	   </div>
+				</div>
+				<div class="modal-body">
+					<form role="form">
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Code-!t</label>
+							<input type="text" id="title" name="title" class="form-control" placeholder="Enter Code-!t Id">
+						</div>
+						<div class="form-group">
+						    <label><span class="glyphicon glyphicon-pencil"></span>Password</label>
+							<input type="password" class="form-control" placeholder="Password">
+						</div>	
+
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-success pull-right">Log-in !</button>\
+					<button type="submit" class="btn btn-link pull-left">Forget Password?</button>
+					</form>
+
+				</div>
+		    </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Login for Faculty -->
+	
+	<div class="modal fade" id="popUpWin">
+	  	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header"  style="background-color:  #27ae60 ;">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-title">Log-in!</span>
+	   </div>
+				</div>
+				<div class="modal-body">
+					<form role="form">
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Code-!t</label>
+							<input type="text" id="title" name="title" class="form-control" placeholder="Enter Code-!t Id">
+						</div>
+						<div class="form-group">
+						    <label><span class="glyphicon glyphicon-pencil"></span>Password</label>
+							<input type="password" class="form-control" placeholder="Password">
+						</div>	
+
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary pull-right">Log-in !</button>
+					<button type="submit" class="btn btn-link pull-left">Forget Password?</button>
+					</form>
+
+				</div>
+		    </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Signup for Student -->
+
+	<div class="modal fade" id="pop">
+	  	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-title">Sign-up!</span>
+	   </div>
+				</div>
+				<div class="modal-body">
+					<form role="form">
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Name</label>
+							<input type="text" id="title" name="title" class="form-control" placeholder="Enter your name">
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-inbox"></span>Institute</label>
+							<select class="form-control">
+								<option id="vimp">Institute Name</option>
+								<option id="vimp">SGSITS</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Password</label>
+							<input type="password" style="border-radius:5px; height:30px; width:200px" placeholder="Password">
+							<span id="gender">
+							<label><span class="glyphicon glyphicon-user"></span>Gender</label>
+							<select style="border-radius:5px; height:30px; width:150px">
+								<option id="vimp">Gender</option>
+								<option id="vimp">Male</option>
+								<option id="vimp">Female</option>
+							</select>
+							</span>
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Code-!t</label>
+							<input type="text" id="title" name="title" style="border-radius:5px; height:30px; width:150px;" placeholder="Your Code-!t Id">
+							<span id="enroll">
+							<label><span class="glyphicon glyphicon-pencil"></span>Enrollment No.</label>
+							<input type="text" style="border-radius:5px; height:30px; width:150px;" placeholder="Enrollment No.">
+							</span>
+						</div>
+						<div class="form-group">
+						    <label><span class="glyphicon glyphicon-calendar"></span>Email Id</label>
+							<input type="email" class="form-control" placeholder="example@gmail.com">
+						</div>	
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-map-marker"></span>Country</label>
+							<select style="border-radius:5px; height:30px; width:200px">
+							    <option id="vimp">Select Country</option>
+								<option id="vimp">India</option>
+								<option id="vimp">America</option>
+							</select>
+							<span id="qualification">
+							<label><span class="glyphicon glyphicon-education"></span>Qualification</label>
+							<select style="border-radius:5px; height:30px; width:150px">
+								<option id="vimp">Select</option>
+								<option id="vimp">BE</option>
+								<option id="vimp">ME</option>
+							</select>
+							</span>
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-map-marker"></span>State</label>
+							<select style="border-radius:5px; height:30px; width:150px">
+							    <option id="vimp">Select State</option>
+								<option id="vimp">MP</option>
+								<option id="vimp">UP</option>
+							</select>
+							<span id="city">
+							<label><span class="glyphicon glyphicon-map-marker"></span>City</label>
+							<select style="border-radius:5px; height:30px; width:150px">
+								<option id="vimp">Select City</option>
+								<option id="vimp">Indore</option>
+								<option id="vimp">Ratlam</option>
+							</select>
+							</span>
+						</div>
+						<div class="form-group">
+							<span style="color:red">*</span><span style="font-style:oblique;">All feilds are mandotary<span></span>
+						</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="submit"class="btn btn-success pull-right">Sign-Up !</button>
+					</form>
+
+				</div>
+		    </div>
+		</div>
+	  </div>
+	</div>
+
+	<!--Signup for Faculty-->
+
+	<div class="modal fade" id="popUpWindow">
+	  	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" style="background-color:  #27ae60 ;">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-title">Sign-up!</span>
+	   </div>
+				</div>
+				<div class="modal-body">
+					<form role="form">
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Name</label>
+							<input type="text" id="title" name="title" class="form-control" placeholder="Enter your name">
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-inbox"></span>Institute</label>
+							<select class="form-control">
+								<option id="vimp">Institute Name</option>
+								<option id="vimp">SGSITS</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Password</label>
+							<input type="password" style="border-radius:5px; height:30px; width:200px" placeholder="Password">
+							<span id="gender">
+							<label><span class="glyphicon glyphicon-user"></span>Gender</label>
+							<select style="border-radius:5px; height:30px; width:150px">
+								<option id="vimp">Gender</option>
+								<option id="vimp">Male</option>
+								<option id="vimp">Female</option>
+							</select>
+							</span>
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Code-!t</label>
+							<input type="text" id="title" name="title" class="form-control" placeholder="Your Code-!t Id">
+						</div>
+						<div class="form-group">
+						    <label><span class="glyphicon glyphicon-calendar"></span>Email Id</label>
+							<input type="email" class="form-control" placeholder="example@gmail.com">
+						</div>	
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-map-marker"></span>Country</label>
+							<select style="border-radius:5px; height:30px; width:200px">
+							    <option id="vimp">Select Country</option>
+								<option id="vimp">India</option>
+								<option id="vimp">America</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<span style="color:red">*</span><span style="font-style:oblique;">All feilds are mandotary<span></span>
+						</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-primary pull-right">Sign-Up !</button>
+					</form>
+
+				</div>
+		    </div>
+		</div>
+	  </div>
+	</div>
+<script src="js/jquery-3.0.0.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.classyedit.js"></script>
+    </script> 
+
+</body>
+</html>

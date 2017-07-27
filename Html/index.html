@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+  	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.google.com/?selection.family=Arima+Madurai">
+    <link rel="stylesheet" type="text/css" href="css/jquery.classyedit.css" />
+    
+
+<style>
+  body
+  {
+	
+    background-size:100%;
+  }
+
+  .modal-header,.close {
+      background-color:#282828 ;
+      color:white;
+      text-align: center;
+      font-size: 30px;
+  }
+  #home{
+  	margin:50px;
+  }
+  #gender{
+  margin:30px;
+  }
+  #qualification{
+  margin:30px;
+  }
+  #city{
+  margin:100px;
+  }
+  #enroll{
+  margin:50px;
+  }
+  #nav > li > a{
+  	color: white;
+  }
+  
+  .dropdown:hover #drop {
+    display: block;
+}
+#student_pass{
+color:red;
+}
+#student_name{
+color:red
+}
+#codeid{
+color:blue;
+}
+#faculty_pass{
+color:red;
+}
+#faculty_name{
+color:red
+}
+#codeid1{
+color:blue;
+}
+
+#match_pass{
+color:red;
+}
+
+#match_pass1{
+color:red;
+}
+</style>
+<script>
+
+function say(){
+
+
+alert("hello");
+
+}
+
+function checkName(){
+
+var x=document.getElementById("uname");
+var v=x.value;
+var l=v.length;
+var re= /^[0-9]+$/;
+if(l<1)
+{
+
+document.getElementById("student_name").innerHTML="name cannot left empty";
+x.style.borderColor="red";
+
+}
+
+else if(re.test(v[0]))
+{
+document.getElementById("student_name").innerHTML="name cannot start with a number";
+
+x.style.borderColor="red";
+
+}
+
+ else{
+ 
+ document.getElementById("student_name").innerHTML="";
+ 
+ x.style.borderColor="green";
+ }
+
+
+}
+
+function checkPassword(){
+
+var x=document.getElementById("upass");
+var v=x.value;
+var l=v.length;
+var re= /^[A-Za-z0-9]+$/;
+if(l<6)
+{
+
+document.getElementById("student_pass").innerHTML="password should atleast 6 characters in length";
+x.style.borderColor="red";
+
+}
+
+else if(!re.test(v))
+{
+document.getElementById("student_pass").innerHTML="password should alphanumeric";
+
+x.style.borderColor="red";
+
+}
+
+ else{
+ 
+ document.getElementById("student_pass").innerHTML="";
+ 
+ x.style.borderColor="green";
+ }
+
+
+}
+
+
+
+
+function getHint(){
+
+var x=document.getElementById("code");
+
+var v=x.value;
+var l=x.length;
+
+    
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("codeid").innerHTML = xmlhttp.responseText;
+
+
+
+
+
+            }
+        };
+        xmlhttp.open("GET", "gethint.php?q="+v, true);
+        xmlhttp.send();
+    }
+
+
+function subCheck(){
+
+
+var x=document.getElementById("uname").value;
+var y=document.getElementById("upass").value;
+
+var z=document.getElementById("code").value;
+
+
+if(x=="" || y=="" || z=="")
+
+alert("plz fill all the mandatory fields");
+
+
+
+
+
+}
+
+function checkName1(){
+
+var x=document.getElementById("uname1");
+var v=x.value;
+var l=v.length;
+var re= /^[0-9]+$/;
+if(l<1)
+{
+
+document.getElementById("faculty_name").innerHTML="name cannot left empty";
+x.style.borderColor="red";
+
+}
+
+else if(re.test(v[0]))
+{
+document.getElementById("faculty_name").innerHTML="name cannot start with a number";
+
+x.style.borderColor="red";
+
+}
+
+ else{
+ 
+ document.getElementById("faculty_name").innerHTML="";
+ 
+ x.style.borderColor="green";
+ }
+
+
+}
+
+function checkPassword1(){
+
+var x=document.getElementById("upass1");
+var v=x.value;
+var l=v.length;
+var re= /^[A-Za-z0-9]+$/;
+if(l<6)
+{
+
+document.getElementById("faculty_pass").innerHTML="password should atleast 6 characters in length";
+x.style.borderColor="red";
+
+}
+
+else if(!re.test(v))
+{
+document.getElementById("faculty_pass").innerHTML="password should alphanumeric";
+
+x.style.borderColor="red";
+
+}
+
+ else{
+ 
+ document.getElementById("faculty_pass").innerHTML="";
+ 
+ x.style.borderColor="green";
+ }
+
+
+}
+
+
+
+
+function getHint1(){
+
+var x=document.getElementById("code1");
+
+var v=x.value;
+var l=x.length;
+
+    
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("codeid1").innerHTML = xmlhttp.responseText;
+
+
+
+
+
+            }
+        };
+        xmlhttp.open("GET", "gethint.php?q="+v, true);
+        xmlhttp.send();
+    }
+
+
+function subCheck1(){
+
+
+var x=document.getElementById("uname1").value;
+var y=document.getElementById("upass1").value;
+
+var z=document.getElementById("code1").value;
+
+
+if(x=="" || y=="" || z=="")
+
+alert("plz fill all the mandatory fields");
+
+}
+
+
+function matchPassword(){
+	var x = document.getElementById("upass").value;
+	var y = document.getElementById("cpass").value;
+
+	if(x!=y){
+		document.getElementById("match_pass").innerHTML = "Password not Matched.";
+		x.style.borderColor="red";
+		y.style.borderColor="red";
+	}
+	else
+		document.getElementById("match_pass").innerHTML = "";
+}
+
+
+function matchPassword1(){
+	var x = document.getElementById("upass1").value;
+	var y = document.getElementById("upass2").value;
+
+	if(x!=y){
+		document.getElementById("match_pass1").innerHTML = "Password not Matched.";
+		x.style.borderColor="red";
+		y.style.borderColor="red";
+	}
+	else
+		document.getElementById("match_pass1").innerHTML = "";
+}
+</script>  
+  
+
+</head>
+<body >
+
+
+
+
+
+<!-- Home Page-->
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
+				<span class="glyphicon glyphicon-option-vertical"></span>
+				<span class="icon-bar"></span>
+			 	<span class="icon-bar"></span>
+			  </button>
+				<a href="index.html" class="navbar-brand"  style="background-color:#4090c3; color:white;">Code-!t</a>
+			</div>
+			<div  class="collapse navbar-collapse" id="mainNavbar">
+				<ul class="nav navbar-nav" id="nav">
+					<li><a href="index.html">Home</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">Practise <span class="caret"></span></a>
+						<ul class="dropdown-menu" id="drop">
+							<li><a href="editor.php">Code,Compile & Run</a></li>
+							<li><a href="problems.php">Problems</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" id="nav-right">
+					
+						<li><a href="#" id="btnTrigger" data-toggle="modal" data-target="#popUp" style="color: white;">Log-in!</a></li>>
+					<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">Sign-up! <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" id="btnTrigger" data-toggle="modal" data-target="#popUpWindow">Faculty</a></li>
+							<li><a href="#" id="btnTrigger" data-toggle="modal" data-target="#pop">Student</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Login for Student -->
+
+	 <div class="modal fade" id="popUp">
+	  	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-title">Log-in!</span>
+	   </div>
+				</div>
+				<div class="modal-body">
+					<form role="form" action="check.php" method="post">
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Code-!t</label>
+							<input type="text" required="required" name="coderid" class="form-control" placeholder="Enter Code-!t Id">
+							
+						</div>
+						<div class="form-group">
+						    <label><span class="glyphicon glyphicon-pencil"></span>Password</label>
+							<input type="password" required="required" name="coderpass" class="form-control" placeholder="Password">
+							<div id="login_error"></div>
+						</div>	
+
+				</div>
+				
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-success pull-right" >Log-in !</button>
+                                       </form> 
+					<button type="submit" class="btn btn-link pull-left" href="#" type="button" id="btnTrigger" data-toggle="modal" data-target="#FP" data-dismiss="modal">Forget Password?</button>
+					
+
+				</div>
+
+		    </div>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Signup for Student -->
+
+	<div class="modal fade" id="pop">
+	  	<div class="modal-dialog" style="width: 750px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-title">Sign-up!</span>
+	   </div>
+				</div>
+				<div class="modal-body">
+					<form role="form" action = "signups.php" method = "POST">
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Name</label>
+
+							<input type="text" id="uname" name="sname" class="form-control" placeholder="Enter your name" required="required" onblur="checkName()"/>
+
+                                                     <div id="student_name">  </div>
+
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-inbox"></span>Institute</label>
+							<input type = "text" class="form-control" name = "Iname" placeholder = "Enter your Institute" required = "required">
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Password</label>
+							<input type="password" id="upass" name = "Spass" class="form-control" required="required" placeholder="Password" onblur="checkPassword()">
+                                                        <span id="student_pass"> </span>
+                         </div>
+                         <div class="form-group">
+						
+							<label><span class="glyphicon glyphicon-pencil"></span>Confirm Password</label>
+							<input type="password" id="cpass" name = "Spass1" class="form-control" placeholder="Confirm Password" required="required" onblur="matchPassword()">
+							<div id = match_pass></div> 
+							
+						</div>
+
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Code-!t</label>
+							<input type="text"  id="code" name="Handle" class="form-control"  required="required" onkeyup="getHint()" placeholder="Your Code-!t Id">
+                                                        <div id="codeid">  </div>
+                         </div>    
+                         <div class="form-group"> 
+            				<label><span class="glyphicon glyphicon-user"></span>Gender</label>
+							<select name="Gender"  required="required" style="border-radius:5px;  height:30px; width:200px">
+								<option id="vimp" value="male">Male</option>
+								<option id="vimp" value="female">Female</option>
+							</select>
+							                          
+							<span id="enroll">
+							<label><span class="glyphicon glyphicon-pencil"></span>Enrollment No.</label>
+							<input type="text" name="Roll_No" required="required" style="border-radius:5px; height:30px; width:200px;" placeholder="Enrollment No.">
+							</span>
+						</div>
+						<div class="form-group">
+						    <label><span class="glyphicon glyphicon-calendar"></span>Email Id</label>
+							<input type="email" name="email" class="form-control" placeholder="example@gmail.com" required="required">
+						</div>	
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-map-marker"></span>Country</label>
+							<select name= "country"  required="required" style="border-radius:5px; height:30px; width:200px">
+								<option id="vimp" value = "India">India</option>
+								<option id="vimp" value = "USA">America</option>
+								<option id="vimp" value = "Australia">Australia</option>
+								<option id="vimp" value = "Russia">Russia</option>
+								<option id="vimp" value = "China">China</option>
+								<option id="vimp" value = "Japan">Japan</option>
+							</select>
+							<span id="qualification">
+							<label><span class="glyphicon glyphicon-education"></span>Qualification</label>
+							<select name="qual" required="required" style="border-radius:5px; height:30px; width:200px">
+								<option id="vimp" value = "BE">BE</option>
+								<option id="vimp" value = "ME">ME</option>
+								<option id="vimp" value = "PHD">PHD</option>
+							</select>
+							</span>
+						</div>
+						<div class="form-group">
+							<span style="color:red">*</span><span style="font-style:oblique;">All feilds are mandotary<span></span>
+						</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="submit"class="btn btn-success pull-right" onclick="subCheck()">Sign-Up !</button>
+					</form>
+
+				</div>
+		    </div>
+		</div>
+	  </div>
+	</div>
+
+	<!--Signup for Faculty-->
+
+	<div class="modal fade" id="popUpWindow">
+	  	<div class="modal-dialog" style="width: 750px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<div class="modal-title">Sign-up!</span>
+	   </div>
+				</div>
+				<div class="modal-body">
+					<form role="form" action = "signupf.php" method = "POST">
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Name</label>
+							<input type="text"  id="uname1" name="sname" required="required" onblur="checkName1()" class="form-control" placeholder="Enter your name">
+
+<div id="faculty_name"> </div>
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-inbox"></span>Institute</label>
+							<input type="text" name="Iname" required="required" class="form-control" placeholder="Institute">
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Password</label>
+							<input type="password" name = "Spass" required="required" class="form-control" placeholder="Password" id="upass1" onblur="checkPassword1()">
+										<span id="faculty_pass"></span>
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Confirm Password</label>
+							<input type="password" name = "Spass1" required="required" class="form-control" placeholder="Confirm Password" id="upass2" onblur="matchPassword1()">
+                                                        <div id=match_pass1></div>
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-user"></span>Gender</label>
+							<select name="Gender" required="required" style="border-radius:5px; height:30px; width:200px">
+								<option id="vimp" value="Male">Male</option>
+								<option id="vimp" value="Female">Female</option>
+							</select>
+							<span id="country" style="margin: 50px;">
+							<label><span class="glyphicon glyphicon-map-marker"></span>Country</label>
+							<select name = "country" required="required" style="border-radius:5px; height:30px; width:200px;">
+								<option id="vimp" value = "India">India</option>
+								<option id="vimp" value = "USA">America</option>
+								<option id="vimp" value = "Australia">Australia</option>
+								<option id="vimp" value = "Russia">Russia</option>
+								<option id="vimp" value = "China">China</option>
+								<option id="vimp" value = "JPN">Japan</option>
+							</select>
+							</span>
+						</div>
+						<div class="form-group">
+							<label><span class="glyphicon glyphicon-pencil"></span>Code-!t</label>
+							<input type="text" name="Handle" id="code1" required="required" class="form-control" placeholder="Your Code-!t Id" onblur="getHint1()">
+									<div id="codeid1"></div>
+						</div>
+						<div class="form-group">
+						    <label><span class="glyphicon glyphicon-calendar"></span>Email Id</label>
+							<input type="email" name = "email"  required="required" class="form-control" placeholder="example@gmail.com">
+						</div>	
+						
+						<div class="form-group">
+							<span style="color:red">*</span><span style="font-style:oblique;">All feilds are mandotary<span></span>
+						</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="submit" onclick="subCheck1()" class="btn btn-success pull-right">Sign-Up !</button>
+					</form>
+
+				</div>
+		    </div>
+		</div>
+	  </div>
+	</div>
+
+	<!--Forgot Password-->
+	<div class="modal fade" id="FP">
+      <div class="modal-dialog" style="width:350px;">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#282828; height:50px;">
+          <div class="modal-title" style="color:white; font-size: 15px;">Please enter your email-id</span>
+     </div>
+        </div>
+        <div class="modal-body">
+          <form role="form" action="fpass.php" method="post">
+            <div class="form-group">
+               <input type="email" name="e" placeholder="Enter your email"> 
+            </div>
+		</div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success pull-left">Submit</button>
+          </form>
+
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+<script src="js/jquery-3.0.0.min.js"></script>
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.classyedit.js"></script>
+    </script> 
+<img src="http://devfloat.net/wp-content/uploads/2016/01/Code-It-Logical-HD-Wallpaper.jpg" width="1200" height="600">
+</body>
+</html>
+		

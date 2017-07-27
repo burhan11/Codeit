@@ -1,0 +1,8 @@
+PREREQUISITES:
+Basic looping,Basic Input/Output
+
+PROBLEM:
+Rewrite small numbers from input to output. Stop processing input after reading in the number 42. All numbers at input are integers of one or two digits.
+
+EXPLANATION:
+Keep taking the input from user until you see number 42, as soon as user inputs 42 terminate the procedure.
